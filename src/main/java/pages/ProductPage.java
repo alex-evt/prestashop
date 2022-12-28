@@ -46,11 +46,11 @@ public class ProductPage extends BasePage {
         return this;
     }
 
-    @Step("Click Proceed to checkout button")
-    public void clickProceedToCheckout() {
-        log.info("Click Proceed to checkout button");
-        proceedToCheckout.click();
-    }
+//    @Step("Click Proceed to checkout button")
+//    public void clickProceedToCheckout() {
+//        log.info("Click Proceed to checkout button");
+//        proceedToCheckout.click();
+//    }
 
     @Step("Fill {quantity} in quantity")
     public ProductPage fillInQuantity(String quantity) {
