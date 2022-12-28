@@ -11,11 +11,11 @@ import services.MyAccountPageService;
 public class AccountTest extends BaseTest {
 
 
-    private final String email = "vent1@emailg.com";
-    private final String password = "10000000v";
+//    private final String email = "vejnt1@emailg.com";
+//    private final String password = "10000000v";
 
-//    private final String email = System.getenv("EMAIL");
-//    private final String password =  System.getenv("PASSWORD");
+    private final String email = System.getenv("EMAIL");
+    private final String password =  System.getenv("PASSWORD");
 
 
     @Description("Verify that account is successfully created")
