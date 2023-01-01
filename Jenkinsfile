@@ -9,8 +9,8 @@ pipeline {
     }
 
     environment {
-        EMAIL = "${email}"
-        PASSWORD = "${password}"
+        EMAIL = ${email}
+        PASSWORD = ${password}
     }
 
     tools {
