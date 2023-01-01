@@ -9,7 +9,7 @@ import pages.MyAccountPage;
 @Log4j2
 public class AuthenticationPageService {
 
-    private static final String AUTHENTICATION_PAGE_URL = "http://prestashop.qatestlab.com.ua/en/authentication";
+    private static final String AUTHENTICATION_PAGE_URL = "http://prestashop.qatestlab.com.ua/ru/authentication";
 
     AuthenticationPage authenticationPage = new AuthenticationPage();
 

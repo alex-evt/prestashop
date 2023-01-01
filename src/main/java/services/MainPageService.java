@@ -9,7 +9,7 @@ import pages.SearchResultsPage;
 @Log4j2
 public class MainPageService {
 
-    private static final String MAIN_PAGE_URL = "http://prestashop.qatestlab.com.ua/en/";
+    private static final String MAIN_PAGE_URL = "http://prestashop.qatestlab.com.ua/ru/";
 
     MainPage mainPage = new MainPage();
 

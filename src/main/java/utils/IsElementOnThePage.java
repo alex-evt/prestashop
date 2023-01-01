@@ -6,6 +6,9 @@ import java.util.List;
 
 public class IsElementOnThePage {
 
+    private IsElementOnThePage() {
+    }
+
     public static boolean isElementPresentOnPage(List<WebElement> listOfElements, String nameOfElement) {
         for (WebElement element : listOfElements) {
             String elementText = element.getText();

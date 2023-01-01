@@ -8,7 +8,7 @@ import pages.WomenCategoryPage;
 @Log4j2
 public class WomenCategoryPageService {
 
-    String url = "http://prestashop.qatestlab.com.ua/en/3-women";
+    String url = "http://prestashop.qatestlab.com.ua/ru/3-women";
 
     WomenCategoryPage womenCategoryPage = new WomenCategoryPage();
 

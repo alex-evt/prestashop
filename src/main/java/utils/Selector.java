@@ -6,6 +6,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class Selector {
+    private Selector() {
+    }
 
     public static void selectByValue(WebElement webElement, String value) {
         new Select(webElement).selectByValue(value);

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class GetElementPosition {
+    private GetElementPosition() {
+    }
 
     public static int getElementPositionByName(List<WebElement> webElementList, String name) {
         for (WebElement element : webElementList) {

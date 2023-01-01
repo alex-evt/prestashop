@@ -11,16 +11,16 @@ import services.MyAccountPageService;
 public class AccountTest extends BaseTest {
 
 
-//    private final String email = "vejnt1@emailg.com";
+//    private final String email = "vejzfnt1@emailg.com";
 //    private final String password = "10000000v";
 
     private final String email = System.getenv("EMAIL");
     private final String password =  System.getenv("PASSWORD");
 
 
-    @Description("Verify that account is successfully created")
+    @Description("Verify successful account creation")
     @Test(priority = 1)
-    public void verifyAccountCreationTest() {
+    public void verifySuccessfulAccountCreationTest() {
         String firstName = "Drake";
         String lastName = "Smith";
         String dayOfBirth = "4";
@@ -50,9 +50,10 @@ public class AccountTest extends BaseTest {
         Assert.assertTrue(isButtonDisplayed);
     }
 
-    @Description("Verify filling out first address with required fields in my account in English version site")
+    @Description("Verify filling out of the first address. Language of the site: English")
     @Test(priority = 3)
-    public void verifyFillOutFirstAddressEnglishTest() {
+    public void verifyFillOutFirstAddressTest() {
+
         UserAddress userAddress = UserAddress.builder()
                 .firstName("Mike")
                 .lastName("Richardson")
@@ -68,12 +69,13 @@ public class AccountTest extends BaseTest {
 
         AuthenticationPageService authenticationPageService = new AuthenticationPageService();
 
+        String expectedTitle = userAddress.getTitleForReference();
         boolean isAddressTitleOnPage = authenticationPageService
                 .changeLanguageToEnglish()
                 .userLogin(email, password)
                 .clickAddAddress()
                 .fillOutAddressRequiredFields(userAddress)
-                .isAddressTitleOnPage("My address");
+                .isAddressTitleOnPage(expectedTitle);
         Assert.assertTrue(isAddressTitleOnPage);
     }
 }

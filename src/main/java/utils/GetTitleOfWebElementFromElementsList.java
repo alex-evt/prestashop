@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class GetTitleOfWebElementFromElementsList {
+    private GetTitleOfWebElementFromElementsList() {
+    }
 
     //getColorFromColorsList??
     public static WebElement getTitleOfElementFromWebElementsList(List<WebElement> elementList, String wantedColor) {
