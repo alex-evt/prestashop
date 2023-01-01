@@ -4,13 +4,13 @@ pipeline {
     parameters {
         choice name: "browser", choices: ['chrome','firefox'], description: "Choose a browser"
         string name: "surefire", defaultValue: "src/test/resources/testng-smoke.xml", description: "surefire path"
-        string name: "email", defaultValue: "al44v4x@mail.com", description: "Enter email"
+        string name: "email", defaultValue: "vawx@mail.com", description: "Email"
         string name: "password", description: "password555", description: "Enter password"
     }
 
     environment {
-        EMAIL = ${email}
-        PASSWORD = ${password}
+        EMAIL = "${email}"
+        PASSWORD = "${password}"
     }
 
     tools {
