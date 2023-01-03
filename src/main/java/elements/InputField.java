@@ -13,7 +13,7 @@ public class InputField {
     private static final String INPUT_XPATH = "//label[@for='%s']//following-sibling::input";
     private final String label;
 
-    protected WebDriver driver = DriverSingleton.getInstance().getDriver();
+    private final WebDriver driver = DriverSingleton.getInstance().getDriver();
 
     public InputField(String label) {
         this.label = label;

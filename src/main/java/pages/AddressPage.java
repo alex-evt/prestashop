@@ -6,7 +6,8 @@ import lombok.extern.log4j.Log4j2;
 import models.UserAddress;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.Selector;
+
+import static utils.PageElementService.selectByVisibleText;
 
 @Log4j2
 public class AddressPage extends BasePage {
@@ -35,14 +36,14 @@ public class AddressPage extends BasePage {
     @Step("Select {country} in Country selector")
     public AddressPage selectCountry(String country) {
         log.info("Select '{}' in Country selector", country);
-        Selector.selectByVisibleText(countrySelector, country);
+        selectByVisibleText(countrySelector, country);
         return this;
     }
 
     @Step("Select {state} in State selector")
     public AddressPage selectState(String state) {
         log.info("Select '{}' in State selector", state);
-        Selector.selectByVisibleText(stateSelector, state);
+        selectByVisibleText(stateSelector, state);
         return this;
     }
 

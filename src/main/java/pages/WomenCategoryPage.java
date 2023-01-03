@@ -4,13 +4,11 @@ import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.Hover;
-import utils.Selector;
 import utils.Waiter;
 
 import java.util.List;
 
-import static utils.GetElementPosition.getElementPositionByName;
+import static utils.PageElementService.*;
 
 @Log4j2
 public class WomenCategoryPage extends BasePage {
@@ -39,7 +37,7 @@ public class WomenCategoryPage extends BasePage {
     private List<WebElement> addToCompare;
 
 
-    private static int PRODUCT_POSITION;
+    private static int productPosition;
 
     @Step("Open {url} page")
     public WomenCategoryPage openPage(String url) {
@@ -51,15 +49,15 @@ public class WomenCategoryPage extends BasePage {
     @Step("Hover over {productName}")
     public WomenCategoryPage hoverProduct(String productName) {
         log.info("Hover over {}", productName);
-        PRODUCT_POSITION = getElementPositionByName(productNames, productName);
-        Hover.hoverElement(productNames.get(getElementPositionByName(productNames, productName)));
+        productPosition = getElementPositionByName(productNames, productName);
+        hoverElement(productNames.get(getElementPositionByName(productNames, productName)));
         return this;
     }
 
     @Step("Click Add to Compare")
     public WomenCategoryPage clickAddToCompare() {
         log.info("Click Add to Compare");
-        addToCompare.get(PRODUCT_POSITION).click();
+        addToCompare.get(productPosition).click();
         return this;
     }
 
@@ -94,7 +92,7 @@ public class WomenCategoryPage extends BasePage {
     @Step("Select Sort by {sortValue}")
     public WomenCategoryPage sortBy(String sortValue) {
         log.info("Select Sort by {}", sortValue);
-        Selector.selectByVisibleText(sortBy, sortValue);
+        selectByVisibleText(sortBy, sortValue);
         return this;
     }
 

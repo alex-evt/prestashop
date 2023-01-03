@@ -7,7 +7,7 @@ import pages.ProductPage;
 @Log4j2
 public class ProductPageService {
 
-    ProductPage productPage = new ProductPage();
+    private final ProductPage productPage = new ProductPage();
 
     @Step("Add product with {quantity} quantity, {color} color and {size} size")
     public ProductPage addProductToCart(String quantity, String color, String size) {
@@ -20,14 +20,6 @@ public class ProductPageService {
                 .waitLayerCart();
         return new ProductPage();
     }
-
-//    public ProductPage addProductToCartAndProceedToCheckout() {
-//        productPage
-//                .clickAddToCart()
-//                .waitLayerCart()
-//                .clickProceedToCheckout();
-//        return new ProductPage();
-//    }
 
     @Step("Add product with {quantity} quantity")
     public ProductPage addProductToCartWithNullQuantity(String quantity) {

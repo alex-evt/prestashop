@@ -10,13 +10,10 @@ import services.MyAccountPageService;
 
 public class AccountTest extends BaseTest {
 
-
-//    private final String email = "vejzfnt1@emailg.com";
-//    private final String password = "10000000v";
-
     private final String email = System.getenv("EMAIL");
-    private final String password =  System.getenv("PASSWORD");
+    private final String password = System.getenv("PASSWORD");
 
+    AuthenticationPageService authenticationPageService;
 
     @Description("Verify successful account creation")
     @Test(priority = 1)
@@ -31,7 +28,7 @@ public class AccountTest extends BaseTest {
                 .lastName(lastName).email(email).password(password)
                 .dayOfBirth(dayOfBirth).monthOfBirth(monthOfBirth).yearOfBirth(yearOfBirth).build();
 
-        AuthenticationPageService authenticationPageService = new AuthenticationPageService();
+        authenticationPageService = new AuthenticationPageService();
 
         String expectedAlertText = "Your account has been created.";
         String actualAlertText = authenticationPageService
@@ -60,14 +57,14 @@ public class AccountTest extends BaseTest {
                 .address("Waller Street")
                 .postalCode("73301")
                 .city("Austen")
-                .country("США") //на английском?
+                .country("США")
                 .state("Texas")
                 .homePhone("9792307045")
                 .mobilePhone("214-276-2365")
                 .titleForReference("My address")
                 .build();
 
-        AuthenticationPageService authenticationPageService = new AuthenticationPageService();
+        authenticationPageService = new AuthenticationPageService();
 
         String expectedTitle = userAddress.getTitleForReference();
         boolean isAddressTitleOnPage = authenticationPageService

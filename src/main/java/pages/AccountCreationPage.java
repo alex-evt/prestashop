@@ -5,8 +5,11 @@ import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.Selector;
+import utils.PageElementService;
 import utils.Waiter;
+
+import static utils.PageElementService.selectByValue;
+import static utils.PageElementService.selectByVisibleText;
 
 @Log4j2
 public class AccountCreationPage extends BasePage {
@@ -14,8 +17,6 @@ public class AccountCreationPage extends BasePage {
     @FindBy(xpath = "//input[@id='id_gender1']")
     private WebElement maleGenderRadioButton;
 
-    @FindBy(xpath = "//input[@id='id_gender2']")
-    private WebElement femaleGenderRadioButton;
 
     @FindBy(xpath = "//input[@id='customer_firstname']")
     private WebElement firstNameField;
@@ -46,13 +47,6 @@ public class AccountCreationPage extends BasePage {
         return this;
     }
 
-    @Step("Toggle female  gender radio button ")
-    public AccountCreationPage checkedFemaleGenderButton() {
-        log.info("Toggle female gender radio button");
-        Waiter.waitVisibilityOfElement(femaleGenderRadioButton);
-        femaleGenderRadioButton.click();
-        return this;
-    }
 
     @Step("Fill {firstName} in First name field")
     public AccountCreationPage fillInFirstName(String firstName) {
@@ -81,14 +75,14 @@ public class AccountCreationPage extends BasePage {
     @Step("Select {dayValue} day in Date of Birth")
     public AccountCreationPage selectDay(String dayValue) {
         log.info("Select '{}' day in Date of Birth", dayValue);
-        Selector.selectByValue(daysBirthdaySelector, dayValue);
+        selectByValue(daysBirthdaySelector, dayValue);
         return this;
     }
 
     @Step("Select {monthValue} month in Date of Birth")
     public AccountCreationPage selectMonth(String monthValue) {
         log.info("Select '{}' month in Date of Birth", monthValue);
-        Selector.selectByVisibleText(monthsBirthdaySelector, monthValue);
+        selectByVisibleText(monthsBirthdaySelector, monthValue);
         return this;
     }
 
@@ -96,7 +90,7 @@ public class AccountCreationPage extends BasePage {
     public AccountCreationPage selectYear(String yearValue) {
         log.info("Select '{}' year in Date of Birth", yearValue);
         WebElement year = new DropDownForYear(yearValue).yearElement();
-        Selector.selectYear(yearsBirthday, year);
+        PageElementService.selectYear(yearsBirthday, year);
         return this;
     }
 

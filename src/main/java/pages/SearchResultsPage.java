@@ -4,11 +4,10 @@ import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-import static utils.IsElementOnThePage.isElementPresentOnPage;
+import static utils.PageElementService.isElementPresentOnPage;
 
 @Log4j2
 public class SearchResultsPage extends Header {

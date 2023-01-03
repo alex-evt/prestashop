@@ -8,7 +8,7 @@ import pages.MyAccountPage;
 @Log4j2
 public class MyAccountPageService {
 
-    MyAccountPage myAccountPage = new MyAccountPage();
+    private final MyAccountPage myAccountPage = new MyAccountPage();
 
     @Step("Logout from account")
     public MyAccountPage logout() {

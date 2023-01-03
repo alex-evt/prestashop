@@ -4,19 +4,17 @@ import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.Selector;
 import utils.Waiter;
 
 import java.util.List;
 import java.util.Objects;
 
-import static utils.GetTitleOfWebElementFromElementsList.getTitleOfElementFromWebElementsList;
+import static utils.PageElementService.getTitleOfElementFromWebElementsList;
+import static utils.PageElementService.selectByVisibleText;
 
 @Log4j2
 public class ProductPage extends BasePage {
 
-    @FindBy(xpath = "//a[contains(@class, 'button-medium')]")
-    private WebElement proceedToCheckout;
 
     @FindBy(xpath = "//div[contains(@class, 'fancybox-overlay')]")
     private WebElement quantityError;
@@ -46,11 +44,6 @@ public class ProductPage extends BasePage {
         return this;
     }
 
-//    @Step("Click Proceed to checkout button")
-//    public void clickProceedToCheckout() {
-//        log.info("Click Proceed to checkout button");
-//        proceedToCheckout.click();
-//    }
 
     @Step("Fill {quantity} in quantity")
     public ProductPage fillInQuantity(String quantity) {
@@ -64,7 +57,7 @@ public class ProductPage extends BasePage {
     @Step("Select {size} size selector")
     public ProductPage selectSize(String size) {
         log.info("Select '{}' size selector", size);
-        Selector.selectByVisibleText(sizeSelector, size);
+        selectByVisibleText(sizeSelector, size);
         return this;
     }
 

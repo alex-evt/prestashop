@@ -11,7 +11,7 @@ public class MainPageService {
 
     private static final String MAIN_PAGE_URL = "http://prestashop.qatestlab.com.ua/ru/";
 
-    MainPage mainPage = new MainPage();
+    private final MainPage mainPage = new MainPage();
 
     @Step("Search for {searchText}")
     public SearchResultsPage search(String searchText) {
@@ -41,20 +41,5 @@ public class MainPageService {
                 .clickBestSellersTab()
                 .clickOnBestsellerProduct(productName);
         return new ProductPageService();
-    }
-
-
-    public ProductPageService clickOnProduct(String productName) {
-        mainPage.openPage(MAIN_PAGE_URL)
-                .clickOnPopularProduct(productName);
-        return new ProductPageService();
-    }
-
-    public MainPage changeLanguageToRussian(){
-        mainPage
-                .openPage(MAIN_PAGE_URL)
-                .clickLanguageDropdown()
-                .clickRussianLanguage();
-        return new MainPage();
     }
 }

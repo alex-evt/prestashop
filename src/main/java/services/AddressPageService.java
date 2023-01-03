@@ -9,7 +9,7 @@ import pages.MyAddresses;
 @Log4j2
 public class AddressPageService {
 
-    AddressPage addressPage = new AddressPage();
+    private final AddressPage addressPage = new AddressPage();
 
     @Step("Fill out all required fields in Your addresses and click Save button")
     public MyAddresses fillOutAddressRequiredFields(UserAddress userAddress) {

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static utils.IsElementOnThePage.isElementPresentOnPage;
+import static utils.PageElementService.isElementPresentOnPage;
 
 @Log4j2
 public class MyAddresses extends BasePage {

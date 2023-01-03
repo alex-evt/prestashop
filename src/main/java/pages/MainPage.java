@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static utils.GetElementPosition.getElementPositionByName;
+import static utils.PageElementService.getElementPositionByName;
 
 
 @Log4j2

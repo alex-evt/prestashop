@@ -22,20 +22,6 @@ public class Header extends BasePage {
     @FindBy(xpath = "//ul[@id='first-languages']//span[text()='English']")
     private WebElement englishLanguage;
 
-    @FindBy(xpath = "//ul[@id='first-languages']//span[text()='Русский']")
-    private WebElement russianLanguage;
-
-    @FindBy(xpath = "//form[@id='setCurrency']")
-    private WebElement currencyDropdown;
-
-    @FindBy(xpath = "//a[@title='Доллар']")
-    private WebElement currencyUSD;
-
-    @FindBy(xpath = "//a[@title='Евро']")
-    private WebElement currencyEUR;
-
-    @FindBy(xpath = "//div[@class='shopping_cart']")
-    private WebElement cart;
 
     @Step("Click on language dropdown")
     public Header clickLanguageDropdown() {
@@ -49,26 +35,6 @@ public class Header extends BasePage {
     public Header clickEnglishLanguage() {
         log.info("Click English in language dropdown");
         englishLanguage.click();
-        return this;
-    }
-
-    public Header clickRussianLanguage() {
-        russianLanguage.click();
-        return this;
-    }
-
-    public Header clickCurrencyDropdown() {
-        currencyDropdown.click();
-        return this;
-    }
-
-    public Header clickCurrencyUSD() {
-        currencyUSD.click();
-        return this;
-    }
-
-    public Header clickCurrencyEUR() {
-        currencyUSD.click();
         return this;
     }
 

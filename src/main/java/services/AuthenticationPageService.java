@@ -11,7 +11,7 @@ public class AuthenticationPageService {
 
     private static final String AUTHENTICATION_PAGE_URL = "http://prestashop.qatestlab.com.ua/ru/authentication";
 
-    AuthenticationPage authenticationPage = new AuthenticationPage();
+    private final AuthenticationPage authenticationPage = new AuthenticationPage();
 
 
     @Step("Create account as {user}")
