@@ -1,0 +1,12 @@
+Checklist Prestashop:
+
+1. Verify successful account creation
+2. Verify logout from account
+3. Verify filling out of the first address
+4. Verify language switch to English
+5. Verify color and size of the chosen product in layer cart
+6. Verify error message when quantity is zero
+7. Verify searched product is on the search results
+8. Verify product sorting in women category
+9. Verify product filtering by jackets
+10. Verify comparison of two products in women category
