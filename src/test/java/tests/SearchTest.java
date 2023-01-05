@@ -11,7 +11,7 @@ public class SearchTest extends BaseTest {
     //Verify search of the product which present on the website catalog
     @Test
     public void verifySearchTest() {
-        String searchRequest = "Light Grey T-Shirt";
+        String searchRequest = "V-back Dress";
         MainPageService mainPageService = new MainPageService();
         boolean isProductOnPage = mainPageService
                 .search(searchRequest)
