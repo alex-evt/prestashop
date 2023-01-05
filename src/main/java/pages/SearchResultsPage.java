@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 import static utils.PageElementService.isElementPresentOnPage;
-import static utils.Waiter.waitVisibilityOfElement;
+import static utils.Waiter.waitVisibilityOfElements;
 
 @Log4j2
 public class SearchResultsPage extends Header {
@@ -19,7 +19,7 @@ public class SearchResultsPage extends Header {
     @Step("Check is {name} product on page")
     public boolean isProductOnPage(String name) {
         log.info("Check is {} product on page", name);
-        waitVisibilityOfElement(productNames.get(3));
+        waitVisibilityOfElements(productNames);
         return isElementPresentOnPage(productNames, name);
     }
 }
