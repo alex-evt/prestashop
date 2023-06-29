@@ -23,6 +23,7 @@ public class WebDriverFactory {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--incognito");
                 chromeOptions.addArguments("--disable-popup-blocking");
+                chromeOptions.addArguments("--remote-allow-origins=*");
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver(chromeOptions);
             }
